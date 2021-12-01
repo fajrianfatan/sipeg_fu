@@ -17,7 +17,7 @@ class Tbl_jenis_pegawai extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_jenis_pegawai' => $this->Tbl_jenis_pegawai_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Daftar Jenis Pegawai',
@@ -32,7 +32,7 @@ class Tbl_jenis_pegawai extends CI_Controller {
 	{
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_jenis_pegawai' => set_value('id_jenis_pegawai'),
@@ -71,7 +71,7 @@ class Tbl_jenis_pegawai extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_jenis_pegawai' => $recordJenis,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Daftar Jenis Pegawai',

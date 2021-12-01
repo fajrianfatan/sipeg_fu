@@ -17,7 +17,7 @@ class Tbl_gol_ruang extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_gol_ruang' => $this->Tbl_golruang_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Daftar Golongan/Ruang Pegawai',
@@ -32,7 +32,7 @@ class Tbl_gol_ruang extends CI_Controller {
 	{
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_gol_ruang' => set_value('id_gol_ruang'),
@@ -71,7 +71,7 @@ class Tbl_gol_ruang extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_gol_ruang' => $recordGol_ruang,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Daftar Golongan/Ruang Pegawai',

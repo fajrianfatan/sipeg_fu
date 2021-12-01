@@ -31,7 +31,7 @@ if ($this->session->userdata('level') == "admin") {
             </div>
             <div class="profile_info">
                 <span>Selamat Datang,</span>
-                <h2><strong><?php echo ucfirst($username); ?></strong></h2>
+                <h2><strong><?php echo ucfirst($user_name); ?></strong></h2>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -80,7 +80,7 @@ if ($this->session->userdata('level') == "admin") {
                                         User</b></a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-cog"></i> Control Panel <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-cog"></i> Data Master <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="<?php echo base_url('admin/tbl_pangkat') ?>">Daftar Pangkat Pegawai</a></li>
                             <li><a href="<?php echo base_url('admin/tbl_jabatan') ?>">Daftar Jabatan Pegawai</a></li>

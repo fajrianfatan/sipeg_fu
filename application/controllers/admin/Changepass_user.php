@@ -19,7 +19,7 @@ class Changepass_user extends CI_Controller {
 
 		$data = array(
             'user' => $this->User_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
             'foto_user' => $data->foto_user,
             'judul' => 'Ganti Password Akun User',

@@ -14,7 +14,7 @@
 <ul class=" navbar-right">
     <li class="nav-item dropdown open" style="padding-left: 15px;">
     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-        <img src="<?php echo base_url('assets/directory/foto user/'.$foto_user)?>" alt=""><strong><?php echo ucfirst($username); ?></strong>
+        <img src="<?php echo base_url('assets/directory/foto user/'.$foto_user)?>" alt=""><strong><?php echo ucfirst($user_name); ?></strong>
     </a>
     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
         <a class="dropdown-item"  href="javascript:;"> Profil</a>

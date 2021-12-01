@@ -48,7 +48,7 @@
                   <div class="bs-example" data-example-id="simple-jumbotron">
                     <div class="jumbotron">
                       <h1>Selamat Datang di Sispeg Ushuluddin!</h1>
-                      <p>Selamat datang <strong><?php echo ucfirst($username);?></strong>! Disini anda login sebagai <strong><?php echo ucfirst($level);?></strong></p>
+                      <p>Selamat datang <strong><?php echo ucfirst($user_name);?></strong>! Disini anda login sebagai <strong><?php echo ucfirst($level);?></strong></p>
                       <p>Website ini menyediakan fitur pengelolaan data kepegawaian berupa :
                         <br>1. Data Pegawai
                         <br>2. Riwayat Pekerjaan dan Penghargaan atau Tanda Jasa

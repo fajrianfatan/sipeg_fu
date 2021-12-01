@@ -17,7 +17,7 @@ class Tbl_agama extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_agama' => $this->Tbl_agama_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Daftar Agama',
@@ -32,7 +32,7 @@ class Tbl_agama extends CI_Controller {
 	{
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_agama' => set_value('id_agama'),
@@ -71,7 +71,7 @@ class Tbl_agama extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_agama' => $recordAgama,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Data Agama',

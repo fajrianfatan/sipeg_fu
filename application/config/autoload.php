@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session','form_validation','upload');
+$autoload['libraries'] = array('database', 'session', 'form_validation', 'upload');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','form','security','directory','web');
+$autoload['helper'] = array('url', 'form', 'security', 'directory', 'web');
 
 /*
 | -------------------------------------------------------------------
@@ -132,11 +132,14 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Login_model','User_model',
-'Pegawai_model','User_model','Tbl_golruang_model',
-'Tbl_pangkat_model','Tbl_jabatan_model','Tbl_pendidikan_model',
-'Tbl_jurusan_model','Kepangkatan_model','Jabatan_model',
-'Penghargaan_model','Tbl_jenis_pegawai_model','Keluarga_model',
-'Pendidikan_model','Pelatihan_model','Tbl_jenis_kelamin_model',
-'Tbl_keluarga_model','Tbl_pekerjaan_model','Tbl_agama_model',
-'Tbl_status_menikah_model');
+$autoload['model'] = array(
+    'Login_model', 'User_model',
+    'Pegawai_model', 'User_model', 'Tbl_golruang_model',
+    'Tbl_pangkat_model', 'Tbl_jabatan_model', 'Tbl_pendidikan_model',
+    'Tbl_jurusan_model', 'Kepangkatan_model', 'Jabatan_model',
+    'Penghargaan_model', 'Tbl_jenis_pegawai_model', 'Keluarga_model',
+    'Pendidikan_model', 'Pelatihan_model', 'Tbl_jenis_kelamin_model',
+    'Tbl_keluarga_model', 'Tbl_pekerjaan_model', 'Tbl_agama_model',
+    'Tbl_status_menikah_model', 'Tbl_kelurahan_model', 'Tbl_kecamatan_model',
+    'Tbl_kota_model', 'Dynamic_model'
+);

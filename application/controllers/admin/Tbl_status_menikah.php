@@ -17,7 +17,7 @@ class Tbl_status_menikah extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_status_menikah' => $this->Tbl_status_menikah_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Daftar Status Pernikahan Pegawai',
@@ -32,7 +32,7 @@ class Tbl_status_menikah extends CI_Controller {
 	{
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_status_menikah' => set_value('id_status_menikah'),
@@ -71,7 +71,7 @@ class Tbl_status_menikah extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_status_menikah' => $recordStatusMenikah,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Data Status Pernikahan Pegawai',

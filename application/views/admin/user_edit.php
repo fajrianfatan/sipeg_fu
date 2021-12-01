@@ -59,6 +59,9 @@
                                     
 									<?php echo form_open_multipart('admin/user/AksiEdit')?>
                                         <div class="item form-group">
+										<input type="hidden" name="id" id="id" value="<?php echo $user->id_user ?>" >
+										<input type="hidden" name="old_nama_user" id="old_nama_user" value="<?php echo $user->nama_user ?>" >
+										<input type="hidden" name="old_username" id="old_username" value="<?php echo $user->username ?>" >
 											<label class="col-form-label col-md-3 col-sm-3 label-align">ID USER
 											</label>
 											<div class="col-md-6 col-sm-6 ">
@@ -69,8 +72,9 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama User <span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_user"  class="form-control " value="<?php echo $user->nama_user ?>">
+												<input type="text" name="nama_user"  class="form-control " value="<?php echo $user->nama_user ?>" >
 											</div>
+											<?php echo form_error('nama_user', '<div class="text-danger">', '</div>'); ?>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Username <span class="required"></span>
@@ -78,6 +82,7 @@
 											<div class="col-md-6 col-sm-6 ">
 												<input type="text" name="username"  class="form-control " value="<?php echo $user->username ?>">
 											</div>
+											<?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
 										</div>
                                         <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Foto User</label><br>

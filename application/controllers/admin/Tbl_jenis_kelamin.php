@@ -17,7 +17,7 @@ class Tbl_jenis_kelamin extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_jenis_kelamin' => $this->Tbl_jenis_kelamin_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Data Jenis Kelamin',
@@ -32,7 +32,7 @@ class Tbl_jenis_kelamin extends CI_Controller {
 	{
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_jenis_kelamin' => set_value('id_jenis_kelamin'),
@@ -71,7 +71,7 @@ class Tbl_jenis_kelamin extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_jenis_kelamin' => $recordJeniskelamin,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Data Jenis Kelamin',

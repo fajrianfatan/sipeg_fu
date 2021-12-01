@@ -17,7 +17,7 @@ class Keluarga extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'keluarga' => $this->Keluarga_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Riwayat Keluarga Pegawai',
@@ -36,7 +36,7 @@ class Keluarga extends CI_Controller {
 			'tbl_keluarga' => $this->Tbl_keluarga_model->tampil_data('tbl_keluarga')->result(),
 			'tbl_jenis_kelamin' => $this->Tbl_jenis_kelamin_model->tampil_data('tbl_jenis_kelamin')->result(),
 			'tbl_pekerjaan' => $this->Tbl_pekerjaan_model->tampil_data('tbl_pekerjaan')->result(),
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_keluarga' => set_value('id_keluarga'),
@@ -99,7 +99,7 @@ class Keluarga extends CI_Controller {
 			'tbl_jenis_kelamin' => $this->Tbl_jenis_kelamin_model->tampil_data('tbl_jenis_kelamin')->result(),
 			'tbl_pekerjaan' => $this->Tbl_pekerjaan_model->tampil_data('tbl_pekerjaan')->result(),
 			'keluarga' => $recordKeluarga,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Data Keluarga',

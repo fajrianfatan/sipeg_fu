@@ -17,7 +17,7 @@ class Pelatihan extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'pelatihan' => $this->Pelatihan_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Data Pelatihan Pegawai',
@@ -33,7 +33,7 @@ class Pelatihan extends CI_Controller {
 		$dataInput = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
 			'pegawai' => $this->Pegawai_model->tampil_data('pegawai')->result(),
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_pelatihan' => set_value('id_pelatihan'),
@@ -102,7 +102,7 @@ class Pelatihan extends CI_Controller {
 		$data = array(
 			'pegawai' => $this->Pegawai_model->tampil_data('pegawai')->result(),
 			'pelatihan' => $recordPelatihan,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Data Pelatihan Pegawai',

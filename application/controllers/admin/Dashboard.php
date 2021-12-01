@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 
 		$data = array(
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Halaman Dashboard',

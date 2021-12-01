@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class User_model extends CI_Model{
 
+    public function ambil_nama($data)
+    {
+        // $this->db->where('username');
+        return $this->db->get('user',$data)->row();
+    }
+
     public function ambil_data($id)
     {
         $this->db->where('username', $id);

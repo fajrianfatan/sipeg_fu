@@ -18,7 +18,7 @@ class Kepangkatan extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'kepangkatan' => $this->Kepangkatan_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Lampiran SK Kepangkatan',
@@ -41,7 +41,7 @@ class Kepangkatan extends CI_Controller {
 			'tbl_pangkat' => $this->Tbl_pangkat_model->tampil_data('tbl_pangkat')->result(),
 			'tbl_jenis_pegawai' => $this->Tbl_jenis_pegawai_model->tampil_data('tbl_jenis_pegawai')->result(),
 			'pegawai' => $this->Pegawai_model->tampil_data('pegawai')->result(),
-			'username' => $dataInput->username,
+			'user_name' => $dataInput->username,
 			'level' => $dataInput->level,
 			'foto_user' => $dataInput->foto_user,
 			'id_kepangkatan' => set_value('id_kepangkatan'),
@@ -141,7 +141,7 @@ class Kepangkatan extends CI_Controller {
 			'tbl_jenis_pegawai' => $this->Tbl_jenis_pegawai_model->tampil_data('tbl_jenis_pegawai')->result(),
 			'pegawai' => $this->Pegawai_model->tampil_data('pegawai')->result(),
 			'kepangkatan' => $recordKepangkatan,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Lampiran SK Kepangkatan',

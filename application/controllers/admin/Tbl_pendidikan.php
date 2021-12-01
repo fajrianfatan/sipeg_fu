@@ -17,7 +17,7 @@ class Tbl_pendidikan extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_pendidikan' => $this->Tbl_pendidikan_model->tampil_data()->result(),
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Daftar Pendidikan Pegawai',
@@ -33,7 +33,7 @@ class Tbl_pendidikan extends CI_Controller {
 	{
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$dataInput = array(
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'id_pendidikan' => set_value('id_pendidikan'),
@@ -72,7 +72,7 @@ class Tbl_pendidikan extends CI_Controller {
 		$data = $this->User_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'tbl_pendidikan' => $recordPendidikan,
-			'username' => $data->username,
+			'user_name' => $data->username,
 			'level' => $data->level,
 			'foto_user' => $data->foto_user,
 			'judul' => 'Ubah Daftar Pendidikan Pegawai',
