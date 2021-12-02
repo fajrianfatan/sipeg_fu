@@ -70,7 +70,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Pendidikan 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="pendidikan" class="form-control " value="<?php echo $tbl_pendidikan->pendidikan ?>">
+												<input type="text" name="pendidikan" class="form-control " 
+												maxlength="32" value="<?php echo $tbl_pendidikan->pendidikan ?>">
 											</div>
 										</div>
                                         

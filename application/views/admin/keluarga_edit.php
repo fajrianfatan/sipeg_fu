@@ -83,7 +83,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Anggota Keluarga
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_anggota" class="form-control" value="<?php echo $keluarga->nama_anggota ?>">
+												<input type="text" name="nama_anggota" class="form-control" 
+												maxlength="60" value="<?php echo $keluarga->nama_anggota ?>">
 											</div>
 										</div>
                                         <div class="item form-group">
@@ -100,7 +101,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat Lahir</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="tempat_lahir_anggota" class="form-control" type="text" value="<?php echo $keluarga->tempat_lahir_anggota ?>">
+												<input name="tempat_lahir_anggota" class="form-control" 
+												maxlength="60" type="text" value="<?php echo $keluarga->tempat_lahir_anggota ?>">
 											</div>
 										</div>
                                         <div class="item form-group">

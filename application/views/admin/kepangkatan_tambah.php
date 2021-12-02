@@ -117,7 +117,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">No SK Kepangkatan <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="no_sk_pangkat" required="required" class="form-control" placeholder="1/VII/Kemenag/2021..">
+												<input type="text" name="no_sk_pangkat" required="required" 
+												maxlength="32" class="form-control" placeholder="1/VII/Kemenag/2021..">
 											</div>
 										</div>
 										
@@ -154,13 +155,15 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Gaji Pokok Kepangkatan <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="gaji_pokok_pangkat" class="form-control" type="text" >
+												<input required="required" name="gaji_pokok_pangkat" 
+												maxlength="32" class="form-control" type="text" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">PAK <span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="pak" class="form-control" type="text" >
+												<input required="required" name="pak" 
+												maxlength="32" class="form-control" type="text" >
 											</div>
 										</div>
                                         <div class="item form-group">

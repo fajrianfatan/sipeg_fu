@@ -82,55 +82,64 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Pelatihan/Kursus 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_latihan" value="<?php echo $pelatihan->nama_latihan?>" class="form-control" >
+												<input type="text" name="nama_latihan" 
+												maxlength="60" value="<?php echo $pelatihan->nama_latihan?>" class="form-control" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Periode</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->periode?>" name="periode" class="form-control" type="text" >
+												<input value="<?php echo $pelatihan->periode?>" name="periode" 
+												maxlength="32" class="form-control" type="text" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Jam lamanya pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->jam?>" name="jam" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->jam?>" name="jam" 
+												maxlength="16" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Hari lamanya pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->hari?>" name="hari" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->hari?>" name="hari" 
+												maxlength="16" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Bulan lamanya pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->bulan?>" name="bulan" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->bulan?>" name="bulan" 
+												maxlength="16" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun pelaksanaan pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->tahun?>" name="tahun" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->tahun?>" 
+												maxlength="4" name="tahun" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->tempat?>" name="tempat" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->tempat?>" 
+												maxlength="60" name="tempat" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Sumber dana pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->sumber_dana?>" name="sumber_dana" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->sumber_dana?>" name="sumber_dana" 
+												maxlength="32" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Penyelenggara pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input value="<?php echo $pelatihan->penyelenggara?>" name="penyelenggara" class="form-control" type="text">
+												<input value="<?php echo $pelatihan->penyelenggara?>" name="penyelenggara" 
+												maxlength="60" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

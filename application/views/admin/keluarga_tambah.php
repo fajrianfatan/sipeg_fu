@@ -81,7 +81,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Anggota Keluarga <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_anggota" required="required" class="form-control">
+												<input type="text" name="nama_anggota" 
+												maxlength="60" required="required" class="form-control">
 											</div>
 										</div>
                                         <div class="item form-group">
@@ -98,7 +99,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat Lahir<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tempat_lahir_anggota" class="form-control" type="text">
+												<input required="required" name="tempat_lahir_anggota" 
+												maxlength="60" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">

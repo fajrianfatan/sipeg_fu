@@ -81,19 +81,22 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Penghargaan <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_penghargaan" required="required" class="form-control" placeholder="Dosen Terbaik Ushuluddin">
+												<input type="text" name="nama_penghargaan" 
+												maxlength="32" required="required" class="form-control" placeholder="Dosen Terbaik Ushuluddin">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun Pemberian<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tahun_penghargaan" class="form-control" type="text" placeholder="2021">
+												<input required="required" name="tahun_penghargaan" 
+												maxlength="4" class="form-control" type="text" placeholder="2021">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Pemberi Penghargaan<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="pemberi_penghargaan" class="form-control" type="text" placeholder="Kemenag RI">
+												<input required="required" name="pemberi_penghargaan" 
+												maxlength="32" class="form-control" type="text" placeholder="Kemenag RI">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

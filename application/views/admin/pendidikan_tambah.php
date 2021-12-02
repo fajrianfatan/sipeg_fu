@@ -94,7 +94,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tahun_pend" class="form-control" type="text" >
+												<input required="required" name="tahun_pend" 
+												maxlength="10" class="form-control" type="text" >
 											</div>
 										</div>
                                         <div class="item form-group">

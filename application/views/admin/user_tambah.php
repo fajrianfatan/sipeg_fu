@@ -74,7 +74,8 @@
                                         class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" name="nama_user" id="nama_user" value="<?php echo set_value('nama_user');?>" class="form-control "
+                                    <input type="text" name="nama_user" id="nama_user" 
+                                    maxlength="60" value="<?php echo set_value('nama_user');?>" class="form-control "
                                         placeholder="">
                                         <?php echo form_error('nama_user', '<div class="text-danger">', '</div>'); ?>
                                 </div>
@@ -84,7 +85,8 @@
                                         class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" name="username" id="username" class="form-control" value="<?php echo set_value('username');?>"
+                                    <input type="text" name="username" id="username" class="form-control" 
+                                    maxlength="16" value="<?php echo set_value('username');?>"
                                         placeholder="">
                                         <?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
                                 </div>
@@ -95,7 +97,8 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="password" name="password" id="password" class="form-control"
-                                        placeholder="Ketikkan password baru">
+                                        placeholder="Ketikkan password baru"
+                                        maxlength="16">
                                         <?php echo form_error('password', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
@@ -105,7 +108,8 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="password" name="passwordconf" id="passwordconf" class="form-control"
-                                        placeholder="Ketik ulang password disini">
+                                        placeholder="Ketik ulang password disini"
+                                        maxlength="16">
                                         <?php echo form_error('passwordconf', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>

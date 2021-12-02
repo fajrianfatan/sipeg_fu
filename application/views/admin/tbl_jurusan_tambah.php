@@ -68,14 +68,16 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Jurusan<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="kode_jurusan" required="required" class="form-control " placeholder="TP atau lainnya..">
+												<input type="text" name="kode_jurusan" required="required" 
+												maxlength="16" class="form-control " placeholder="TP atau lainnya..">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Jurusan<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="jurusan" required="required" class="form-control " placeholder="Filsafat atau lainnya..">
+												<input type="text" name="jurusan" required="required" 
+												maxlength="32" class="form-control " placeholder="Filsafat atau lainnya..">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

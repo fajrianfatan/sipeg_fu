@@ -69,7 +69,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Pendidikan <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="pendidikan" required="required" class="form-control " placeholder="S2/Diploma/dll.">
+												<input type="text" name="pendidikan"
+												maxlength="32" required="required" class="form-control " placeholder="S2/Diploma/dll.">
 											</div>
 										</div>
 										                                        

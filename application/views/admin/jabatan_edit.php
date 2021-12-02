@@ -68,7 +68,8 @@
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Pegawai<span class="required"> *</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" name="id_pegawai" required="required" type="text">
+												<select class="form-control" name="id_pegawai" required="required" type="text"
+												maxlength="60">
 												<?php 
 													foreach ($pegawai as $peg) : 
 													if($peg->id_pegawai == $jabatan->id_pegawai){?>
@@ -117,7 +118,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Gaji Pokok Jabatan</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="gaji_pokok_jabatan" class="form-control" type="text" value="<?php echo $jabatan->gaji_pokok_jabatan ?>" >
+												<input required="required" name="gaji_pokok_jabatan" class="form-control" 
+												maxlength="32" type="text" value="<?php echo $jabatan->gaji_pokok_jabatan ?>" >
 											</div>
 										</div>
                                         <div class="item form-group">

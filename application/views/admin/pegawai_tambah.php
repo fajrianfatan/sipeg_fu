@@ -79,8 +79,9 @@
                                         class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" type="text" name="nip" id="nip" class="form-control " value="<?php echo set_value('nip');?>"
-                                        placeholder="Contoh : 197001012005..">
+                                    <input required="required" type="text" name="nip" id="nip" class="form-control " 
+                                    maxlength = "18" value="<?php echo set_value('nip');?>"
+                                        placeholder="Masukkan 18 angka NIP anda disini.">
                                         <?php echo form_error('nip', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
@@ -88,7 +89,8 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align"> Nama Pegawai
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="nama_pegawai" class="form-control" type="text" value="<?php echo set_value('nama_pegawai');?>"
+                                    <input required="required" name="nama_pegawai" class="form-control" 
+                                    maxlength = "60" type="text" value="<?php echo set_value('nama_pegawai');?>"
                                         placeholder="(Nama lengkap anda)">
                                 </div>
                             </div>
@@ -96,7 +98,8 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align"> Gelar Pegawai
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input name="gelar_pegawai" class="form-control" type="text" value="<?php echo set_value('gelar_pegawai');?>"
+                                    <input name="gelar_pegawai" class="form-control" type="text" 
+                                    maxlength = "32" value="<?php echo set_value('gelar_pegawai');?>"
                                         placeholder="Contoh : M.Ag., Dr.">
                                 </div>
                             </div>
@@ -117,7 +120,9 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align"> Username Akun
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="username" id="username" class="form-control" type="text">
+                                    <input required="required" name="username" id="username" class="form-control" type="text"
+                                    placeholder="Masukkan username yang terdiri dari 8-16 karakter."
+                                    maxlength = "16">
                                     <?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
@@ -125,7 +130,9 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align"> Password Akun Pegawai
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="password" id="password" class="form-control" type="password">
+                                    <input required="required" name="password" id="password" class="form-control" type="password"
+                                    placeholder="Masukkan password baru yang terdiri dari 8-16 karakter."
+                                    maxlength = "16">
                                 </div>
                                 <?php echo form_error('password', '<div class="text-danger">', '</div>'); ?>
                             </div>
@@ -133,7 +140,9 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align"> Konfirmasi Password Akun Pegawai
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="passwordconf" id="passwordconf" class="form-control" type="password">
+                                    <input required="required" name="passwordconf" id="passwordconf" class="form-control" type="password"
+                                    placeholder="Ketikkan ulang password baru disini."
+                                    maxlength = "16">
                                 </div>
                                 <?php echo form_error('passwordconf', '<div class="text-danger">', '</div>'); ?>
                             </div>
@@ -229,7 +238,8 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Alamat <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="alamat" class="form-control" type="text" value="<?php echo set_value('alamat');?>"
+                                    <input required="required" name="alamat" class="form-control" 
+                                    maxlength = "60" type="text" value="<?php echo set_value('alamat');?>"
                                         placeholder="(Alamat lengkap anda)">
                                 </div>
                             </div>
@@ -237,7 +247,8 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat Lahir
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="tempat_lahir" class="form-control" type="text" value="<?php echo set_value('tempat_lahir');?>">
+                                    <input required="required" name="tempat_lahir" class="form-control" type="text" 
+                                    maxlength = "60" value="<?php echo set_value('tempat_lahir');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -286,7 +297,8 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Satuan Kerja
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="satuan_kerja" class="form-control" type="text" value="<?php echo set_value('satuan_kerja');?>">
+                                    <input required="required" name="satuan_kerja" class="form-control" type="text" 
+                                    maxlength = "60" value="<?php echo set_value('satuan_kerja');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -319,14 +331,16 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Satuan
                                     Organisasi <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="satuan_org" class="form-control" type="text" value="<?php echo set_value('satuan_org');?>">
+                                    <input required="required" name="satuan_org" class="form-control" 
+                                    maxlength = "60" type="text" value="<?php echo set_value('satuan_org');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">KGB Pegawai
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="kgb_pegawai" class="form-control" type="text" value="<?php echo set_value('kgb_pegawai');?>">
+                                    <input required="required" name="kgb_pegawai" class="form-control" type="text" 
+                                    maxlength = "18"value="<?php echo set_value('kgb_pegawai');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -346,42 +360,49 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karpeg <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="karpeg" class="form-control" type="text" value="<?php echo set_value('karpeg');?>">
+                                    <input required="required" name="karpeg" class="form-control" type="text" 
+                                    maxlength = "18" value="<?php echo set_value('karpeg');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karis <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="karis" class="form-control" type="text" value="<?php echo set_value('karis');?>">
+                                    <input required="required" name="karis" class="form-control" type="text" 
+                                    maxlength = "16" value="<?php echo set_value('karis');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">KPE <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="kpe" class="form-control" type="text" value="<?php echo set_value('kpe');?>">
+                                    <input required="required" name="kpe" class="form-control" type="text" 
+                                    maxlength = "18" value="<?php echo set_value('kpe');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Taspen <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="taspen" class="form-control" type="text" value="<?php echo set_value('taspen');?>">
+                                    <input required="required" name="taspen" class="form-control" 
+                                    maxlength = "15" type="text" value="<?php echo set_value('taspen');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NPWP <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="npwp" class="form-control" type="text" value="<?php echo set_value('npwp');?>">
+                                    <input required="required" name="npwp" class="form-control" type="text" 
+                                    placeholder = "Masukkan NPWP tanpa tanda '-' maupun '.'"
+                                    maxlength = "15" value="<?php echo set_value('npwp');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NIDN <span
                                         class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input required="required" name="nidn" class="form-control" type="text" value="<?php echo set_value('nidn');?>">
+                                    <input required="required" name="nidn" class="form-control" type="text" 
+                                    maxlength = "16" value="<?php echo set_value('nidn');?>">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -402,7 +423,8 @@
                                     <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input required="required" name="telp" class="form-control" type="text" value="<?php echo set_value('telp');?>"
-                                        placeholder="(Nomor aktif yang dapat dihubungi)">
+                                        placeholder="(Nomor aktif yang dapat dihubungi)"
+                                        maxlength = "16">
                                 </div>
                             </div>
 

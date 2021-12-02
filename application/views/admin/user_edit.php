@@ -72,7 +72,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama User <span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_user"  class="form-control " value="<?php echo $user->nama_user ?>" >
+												<input type="text" name="nama_user"  class="form-control " value="<?php echo $user->nama_user ?>" 
+												maxlength="60">
 											</div>
 											<?php echo form_error('nama_user', '<div class="text-danger">', '</div>'); ?>
 										</div>
@@ -80,7 +81,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Username <span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="username"  class="form-control " value="<?php echo $user->username ?>">
+												<input type="text" name="username"  class="form-control " 
+												maxlength="16" value="<?php echo $user->username ?>">
 											</div>
 											<?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
 										</div>

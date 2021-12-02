@@ -62,6 +62,9 @@
                             <?php echo form_open_multipart('admin/pegawai/AksiEdit') ?>
                             <?php echo $this->session->flashdata('pesan') ?>
                             <div class="item form-group">
+                            <input type="hidden" name="id" id="id" value="<?php echo $pegawai->id_pegawai ?>" >
+                                <input type="hidden" name="old_nip" id="old_nip" value="<?php echo $pegawai->nip ?>" >
+                                <input type="hidden" name="old_username" id="old_username" value="<?php echo $pegawai->username ?>" >
                                 <input type="hidden" name="id_pegawai" id="id_pegawai" value="<?php echo $pegawai->id_pegawai ?>" >
                                 <label class="col-form-label col-md-3 col-sm-3 label-align">ID PEGAWAI
                                 </label>
@@ -75,7 +78,9 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="text" name="nip" class="form-control "
+                                    maxlength = "18"
                                         value="<?php echo $pegawai->nip ?>">
+                                    <?php echo form_error('nip', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -83,7 +88,9 @@
                                     Pegawai</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="nama_pegawai" class="form-control" type="text"
+                                    maxlength = "60"
                                         value="<?php echo $pegawai->nama_pegawai ?>">
+                                    <?php echo form_error('nama_pegawai', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -91,6 +98,7 @@
                                     Pegawai</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="gelar_pegawai" class="form-control" type="text"
+                                    maxlength = "32"
                                         value="<?php echo $pegawai->gelar_pegawai ?>">
                                 </div>
                             </div>
@@ -113,7 +121,9 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input required="required" name="username" class="form-control" type="text"
+                                    maxlength = "16"
                                         value="<?php echo $pegawai->username ?>">
+                                    <?php echo form_error('username', '<div class="text-danger">', '</div>'); ?>
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -211,6 +221,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Alamat</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="alamat" class="form-control" type="text"
+                                    maxlength = "60"
                                         value="<?php echo $pegawai->alamat ?>">
                                 </div>
                             </div>
@@ -219,6 +230,7 @@
                                     Lahir</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="tempat_lahir" class="form-control" type="text"
+                                    maxlength = "60"
                                         value="<?php echo $pegawai->tempat_lahir ?>">
                                 </div>
                             </div>
@@ -268,6 +280,7 @@
                                     Kerja</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="satuan_kerja" class="form-control" type="text"
+                                    maxlength = "60"
                                         value="<?php echo $pegawai->satuan_kerja ?>">
                                 </div>
                             </div>
@@ -302,6 +315,7 @@
                                     Organisasi</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="satuan_org" class="form-control" type="text"
+                                    maxlength = "60"
                                         value="<?php echo $pegawai->satuan_org ?>">
                                 </div>
                             </div>
@@ -310,6 +324,7 @@
                                     Pegawai</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="kgb_pegawai" class="form-control" type="text"
+                                    maxlength = "18"
                                         value="<?php echo $pegawai->kgb_pegawai ?>">
                                 </div>
                             </div>
@@ -330,6 +345,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karpeg</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="karpeg" class="form-control" type="text"
+                                    maxlength = "18"
                                         value="<?php echo $pegawai->karpeg ?>">
                                 </div>
                             </div>
@@ -337,6 +353,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karis</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="karis" class="form-control" type="text"
+                                    maxlength = "16"
                                         value="<?php echo $pegawai->karis ?>">
                                 </div>
                             </div>
@@ -344,6 +361,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">KPE</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="kpe" class="form-control" type="text"
+                                    maxlength = "18"
                                         value="<?php echo $pegawai->kpe ?>">
                                 </div>
                             </div>
@@ -351,6 +369,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Taspen</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="taspen" class="form-control" type="text"
+                                    maxlength = "15"
                                         value="<?php echo $pegawai->taspen ?>">
                                 </div>
                             </div>
@@ -358,6 +377,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NPWP</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="npwp" class="form-control" type="text"
+                                    maxlength = "15"
                                         value="<?php echo $pegawai->npwp ?>">
                                 </div>
                             </div>
@@ -365,6 +385,7 @@
                                 <label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NIDN</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="nidn" class="form-control" type="text"
+                                    maxlength = "16"
                                         value="<?php echo $pegawai->nidn ?>">
                                 </div>
                             </div>
@@ -386,6 +407,7 @@
                                     Telepon/HP</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input name="telp" class="form-control" type="text"
+                                    maxlength = "15"
                                         value="<?php echo $pegawai->telp ?>">
                                 </div>
                             </div>

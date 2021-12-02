@@ -82,21 +82,24 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Penghargaan
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_penghargaan" required="required" class="form-control" value="<?php echo $penghargaan->nama_penghargaan ?>">
+												<input type="text" name="nama_penghargaan" 
+												maxlength="32" required="required" class="form-control" value="<?php echo $penghargaan->nama_penghargaan ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun Pemberian
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tahun_penghargaan" class="form-control" type="text" value="<?php echo $penghargaan->tahun_penghargaan ?>">
+												<input required="required" name="tahun_penghargaan" 
+												maxlength="4" class="form-control" type="text" value="<?php echo $penghargaan->tahun_penghargaan ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Pemberi Penghargaan
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="pemberi_penghargaan" class="form-control" type="text" value="<?php echo $penghargaan->pemberi_penghargaan ?>">
+												<input required="required" name="pemberi_penghargaan" 
+												maxlength="32" class="form-control" type="text" value="<?php echo $penghargaan->pemberi_penghargaan ?>">
 											</div>
 										</div>
                                         

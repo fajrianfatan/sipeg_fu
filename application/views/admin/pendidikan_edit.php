@@ -96,7 +96,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="tahun_pend" class="form-control" type="text" value="<?php echo $pendidikan->tahun_pend ?>">
+												<input name="tahun_pend" class="form-control" 
+												maxlength="10" type="text" value="<?php echo $pendidikan->tahun_pend ?>">
 											</div>
 										</div>
                                         <div class="item form-group">

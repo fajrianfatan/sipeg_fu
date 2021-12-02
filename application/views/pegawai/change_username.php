@@ -67,7 +67,8 @@
 											<label for="passBaru" class="col-form-label col-md-3 col-sm-3 label-align">Masukkan Username Baru<span class="required"> *</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="unameBaru" id="unameBaru" class="form-control " required="required">
+												<input type="text" name="unameBaru" id="unameBaru" 
+												maxlength="16"class="form-control " required="required">
 												<?php echo form_error('unameBaru','<div class="text-danger pl-3">', '</div>') ?>
 											</div>
 										</div>
@@ -75,7 +76,8 @@
 											<label for="ulangPass" class="col-form-label col-md-3 col-sm-3 label-align">Konfirmasi Username Baru<span class="required"> *</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="ulangUname" id="ulangUname" class="form-control " required="required">
+												<input type="text" name="ulangUname" id="ulangUname" 
+												maxlength="16" class="form-control " required="required">
 												<?php echo form_error('ulangUname','<div class="text-danger pl-3">', '</div>') ?>
 											</div>
 										</div>

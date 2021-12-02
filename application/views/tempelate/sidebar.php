@@ -82,10 +82,10 @@ if ($this->session->userdata('level') == "admin") {
                     </li>
                     <li><a><i class="fa fa-cog"></i> Data Master <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="<?php echo base_url('admin/tbl_pangkat') ?>">Daftar Pangkat Pegawai</a></li>
+                            <!-- <li><a href="<?php echo base_url('admin/tbl_pangkat') ?>">Daftar Pangkat Pegawai</a></li> -->
                             <li><a href="<?php echo base_url('admin/tbl_jabatan') ?>">Daftar Jabatan Pegawai</a></li>
-                            <li><a href="<?php echo base_url('admin/tbl_gol_ruang') ?>">Daftar Golongan/Ruang
-                                    Pegawai</a></li>
+                            <!-- <li><a href="<?php echo base_url('admin/tbl_gol_ruang') ?>">Daftar Golongan/Ruang
+                                    Pegawai</a></li> -->
                             <li><a href="<?php echo base_url('admin/tbl_jenis_pegawai') ?>">Daftar Jenis Pegawai</a>
                             </li>
                             <li><a href="<?php echo base_url('admin/tbl_pendidikan') ?>">Daftar Pendidikan Pegawai</a>
@@ -94,11 +94,11 @@ if ($this->session->userdata('level') == "admin") {
                             <li><a href="<?php echo base_url('admin/tbl_pekerjaan') ?>">Daftar Pekerjaan Pegawai</a>
                             </li>
                             <li><a href="<?php echo base_url('admin/tbl_keluarga') ?>">Daftar Keluarga</a></li>
-                            <li><a href="<?php echo base_url('admin/tbl_status_menikah') ?>">Daftar Status
-                                    Pernikahan</a></li>
-                            <li><a href="<?php echo base_url('admin/tbl_agama') ?>">Daftar Agama</a></li>
-                            <li><a href="<?php echo base_url('admin/tbl_jenis_kelamin') ?>">Daftar Jenis Kelamin</a>
-                            </li>
+                            <!-- <li><a href="<?php echo base_url('admin/tbl_status_menikah') ?>">Daftar Status
+                                    Pernikahan</a></li> -->
+                            <!-- <li><a href="<?php echo base_url('admin/tbl_agama') ?>">Daftar Agama</a></li> -->
+                            <!-- <li><a href="<?php echo base_url('admin/tbl_jenis_kelamin') ?>">Daftar Jenis Kelamin</a>
+                            </li> -->
                         </ul>
                     </li>
                     <br>

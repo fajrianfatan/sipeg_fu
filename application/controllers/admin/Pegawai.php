@@ -168,7 +168,7 @@ class Pegawai extends CI_Controller
 				,array(
 					'required'      => '%s wajib diisi.',
 					'exact_length'      => '%s harus terdiri dari 18 angka.',
-					'is_unique'     => '%s telah digunakan.'
+					'is_unique'     => '%s tidak dapat sama dengan pegawai lain.'
 		));
 		$this->form_validation->set_rules('username', 'Username', 'required|min_length[8]|max_length[16]|trim|xss_clean|is_unique[pegawai.username]'
 		,array(
@@ -312,7 +312,9 @@ class Pegawai extends CI_Controller
 
 	public function AksiEdit()
 	{
+		$id = $this->input->post('id');
 		$id_pegawai = $this->input->post('id_pegawai');
+		$old_nip = $this->input->post('old_nip');
 		$nip = $this->input->post('nip');
 		$nama_pegawai = $this->input->post('nama_pegawai');
 		$gelar_pegawai = $this->input->post('gelar_pegawai');
@@ -327,6 +329,7 @@ class Pegawai extends CI_Controller
 		$provinsi = $this->input->post('provinsi');
 		$tempat_lahir = $this->input->post('tempat_lahir');
 		$tanggal_lahir = $this->input->post('tanggal_lahir');
+		$old_username = $this->input->post('old_username');
 		$username = $this->input->post('username');
 		$status_pegawai = $this->input->post('status_pegawai');
 		$jenis_pegawai = $this->input->post('jenis_pegawai');
@@ -346,26 +349,210 @@ class Pegawai extends CI_Controller
 		$telp = $this->input->post('telp');
 
 		$foto_pegawai = $_FILES['userfile']['name'];
-
-		if ($foto_pegawai) {
-			$config['upload_path']          = './assets/directory/foto pegawai';
-			$config['allowed_types']        = 'jpg|png';
-			$config['max_size']             = 2000;
-			$config['max_width']            = 600;
-			$config['max_height']           = 400;
-			$config['file_name']           = 'foto-' . $nama_pegawai . date('ymd');
-
-			$this->upload->initialize($config);
-
-			if ($this->upload->do_upload('userfile')) {
-				$userfile = $this->upload->data('file_name');
+		if($old_nip !== $nip || $old_username !== $username)
+		{
+			$this->form_validation->set_rules('nip', 'NIP', 'required|exact_length[18]|trim|xss_clean|is_unique[pegawai.nip]'
+			,array(
+				'required'      => '%s wajib diisi.',
+				'exact_length'      => '%s harus terdiri dari 18 angka.',
+				'is_unique'     => '%s tidak dapat sama dengan pegawai lain.'
+			));
+			$this->form_validation->set_rules('username', 'Username', 'required|min_length[8]|max_length[16]|trim|xss_clean|is_unique[pegawai.username]'
+				,array(
+					'required'      => '%s wajib diisi.',
+					'min_length'      => '%s harus terdiri dari minimal 8 karakter.',
+					'max_length'      => '%s harus terdiri dari maksimal 16 karakter.',
+					'is_unique'     => '%s telah digunakan.'
+			));
+			if ($this->form_validation->run() == FALSE)
+			{
+				// $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
+				// <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				// </button>
+				// Username telah digunakan oleh pengguna lain. Mohon gunakan username lain.</div>');
+				$this->edit($id);
+				return;
+			}
+			else{
+				if ($foto_pegawai) {
+					$config['upload_path']          = './assets/directory/foto pegawai';
+					$config['allowed_types']        = 'jpg|png';
+					$config['max_size']             = 2000;
+					$config['max_width']            = 600;
+					$config['max_height']           = 400;
+					$config['file_name']           = 'foto-' . $nama_pegawai . date('ymd');
+		
+					$this->upload->initialize($config);
+		
+					if ($this->upload->do_upload('userfile')) {
+						$userfile = $this->upload->data('file_name');
+						$id = array('id_pegawai' => $id_pegawai);
+						$DataUpdate = array(
+							'nip' => $nip,
+							'nama_pegawai' => $nama_pegawai,
+							'gelar_pegawai' => $gelar_pegawai,
+							'jenis_kelamin' => $jenis_kelamin,
+							'foto_pegawai' => $userfile,
+							'agama' => $agama,
+							'pendidikan' => $pendidikan,
+							'status_nikah' => $status_nikah,
+							'alamat' => $alamat,
+							'kelurahan' => $kelurahan,
+							'kecamatan' => $kecamatan,
+							'kota' => $kota,
+							'provinsi' => $provinsi,
+							'tempat_lahir' => $tempat_lahir,
+							'tanggal_lahir' => $tanggal_lahir,
+							'username' => $username,
+							'status_pegawai' => $status_pegawai,
+							'jenis_pegawai' => $jenis_pegawai,
+							'satuan_kerja' => $satuan_kerja,
+							'jabatan' => $jabatan,
+							'gol_ruang' => $gol_ruang,
+							'satuan_org' => $satuan_org,
+							'kgb_pegawai' => $kgb_pegawai,
+							'pangkat' => $pangkat,
+							'karpeg' => $karpeg,
+							'karis' => $karis,
+							'kpe' => $kpe,
+							'taspen' => $taspen,
+							'npwp' => $npwp,
+							'nidn' => $nidn,
+							'jurusan' => $jurusan,
+							'telp' => $telp
+						);
+						$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+						</button>
+						Data pegawai berhasil diubah.</div>');
+						$this->Pegawai_model->update_data('pegawai', $DataUpdate, $id);
+						redirect('admin/pegawai');
+					} else {
+						$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+					</button>
+					Maaf. Data Pegawai gagal diubah karena kesalahan pada unggah foto. Mohon gunakan file gambar yang sesuai.</div>');
+						redirect('admin/pegawai');
+					}
+				} elseif ($foto_pegawai = 'userfile') {
+					$id = array('id_pegawai' => $id_pegawai);
+					$DataUpdate = array(
+						'nip' => $nip,
+						'nama_pegawai' => $nama_pegawai,
+						'gelar_pegawai' => $gelar_pegawai,
+						'jenis_kelamin' => $jenis_kelamin,
+						'agama' => $agama,
+						'pendidikan' => $pendidikan,
+						'status_nikah' => $status_nikah,
+						'alamat' => $alamat,
+						'kelurahan' => $kelurahan,
+						'kecamatan' => $kecamatan,
+						'kota' => $kota,
+						'provinsi' => $provinsi,
+						'tempat_lahir' => $tempat_lahir,
+						'tanggal_lahir' => $tanggal_lahir,
+						'username' => $username,
+						'status_pegawai' => $status_pegawai,
+						'jenis_pegawai' => $jenis_pegawai,
+						'satuan_kerja' => $satuan_kerja,
+						'jabatan' => $jabatan,
+						'gol_ruang' => $gol_ruang,
+						'satuan_org' => $satuan_org,
+						'kgb_pegawai' => $kgb_pegawai,
+						'pangkat' => $pangkat,
+						'karpeg' => $karpeg,
+						'karis' => $karis,
+						'kpe' => $kpe,
+						'taspen' => $taspen,
+						'npwp' => $npwp,
+						'nidn' => $nidn,
+						'jurusan' => $jurusan,
+						'telp' => $telp
+					);
+					$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+					</button>
+					Data pegawai berhasil diubah.</div>');
+					// $this->pegawai_model->editDataPegawai($DataUpdate, $id_pegawai);
+					$this->Pegawai_model->update_data('pegawai', $DataUpdate, $id);
+					redirect('admin/pegawai');
+				} else {
+					$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+					</button>
+					Maaf. Data pegawai gagal diubah karena kesalahan pengisian form. Silakan cek kembali.</div>');
+					redirect('admin/pegawai/index');
+				}
+			}
+		}
+		else{
+			if ($foto_pegawai) {
+				$config['upload_path']          = './assets/directory/foto pegawai';
+				$config['allowed_types']        = 'jpg|png';
+				$config['max_size']             = 2000;
+				$config['max_width']            = 600;
+				$config['max_height']           = 400;
+				$config['file_name']           = 'foto-' . $nama_pegawai . date('ymd');
+	
+				$this->upload->initialize($config);
+	
+				if ($this->upload->do_upload('userfile')) {
+					$userfile = $this->upload->data('file_name');
+					$id = array('id_pegawai' => $id_pegawai);
+					$DataUpdate = array(
+						'nip' => $nip,
+						'nama_pegawai' => $nama_pegawai,
+						'gelar_pegawai' => $gelar_pegawai,
+						'jenis_kelamin' => $jenis_kelamin,
+						'foto_pegawai' => $userfile,
+						'agama' => $agama,
+						'pendidikan' => $pendidikan,
+						'status_nikah' => $status_nikah,
+						'alamat' => $alamat,
+						'kelurahan' => $kelurahan,
+						'kecamatan' => $kecamatan,
+						'kota' => $kota,
+						'provinsi' => $provinsi,
+						'tempat_lahir' => $tempat_lahir,
+						'tanggal_lahir' => $tanggal_lahir,
+						'username' => $username,
+						'status_pegawai' => $status_pegawai,
+						'jenis_pegawai' => $jenis_pegawai,
+						'satuan_kerja' => $satuan_kerja,
+						'jabatan' => $jabatan,
+						'gol_ruang' => $gol_ruang,
+						'satuan_org' => $satuan_org,
+						'kgb_pegawai' => $kgb_pegawai,
+						'pangkat' => $pangkat,
+						'karpeg' => $karpeg,
+						'karis' => $karis,
+						'kpe' => $kpe,
+						'taspen' => $taspen,
+						'npwp' => $npwp,
+						'nidn' => $nidn,
+						'jurusan' => $jurusan,
+						'telp' => $telp
+					);
+					$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+					</button>
+					Data pegawai berhasil diubah.</div>');
+					$this->Pegawai_model->update_data('pegawai', $DataUpdate, $id);
+					redirect('admin/pegawai');
+				} else {
+					$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				Maaf. Data Pegawai gagal diubah karena kesalahan pada unggah foto. Mohon gunakan file gambar yang sesuai.</div>');
+					redirect('admin/pegawai');
+				}
+			} elseif ($foto_pegawai = 'userfile') {
 				$id = array('id_pegawai' => $id_pegawai);
 				$DataUpdate = array(
 					'nip' => $nip,
 					'nama_pegawai' => $nama_pegawai,
 					'gelar_pegawai' => $gelar_pegawai,
 					'jenis_kelamin' => $jenis_kelamin,
-					'foto_pegawai' => $userfile,
 					'agama' => $agama,
 					'pendidikan' => $pendidikan,
 					'status_nikah' => $status_nikah,
@@ -398,63 +585,16 @@ class Pegawai extends CI_Controller
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 				</button>
 				Data pegawai berhasil diubah.</div>');
+				// $this->pegawai_model->editDataPegawai($DataUpdate, $id_pegawai);
 				$this->Pegawai_model->update_data('pegawai', $DataUpdate, $id);
 				redirect('admin/pegawai');
 			} else {
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            Maaf. Data Pegawai gagal diubah karena kesalahan pada unggah foto. Mohon gunakan file gambar yang sesuai.</div>');
-				redirect('admin/pegawai');
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+				</button>
+				Maaf. Data pegawai gagal diubah karena kesalahan pengisian form. Silakan cek kembali.</div>');
+				redirect('admin/pegawai/index');
 			}
-		} elseif ($foto_pegawai = 'userfile') {
-			$id = array('id_pegawai' => $id_pegawai);
-			$DataUpdate = array(
-				'nip' => $nip,
-				'nama_pegawai' => $nama_pegawai,
-				'gelar_pegawai' => $gelar_pegawai,
-				'jenis_kelamin' => $jenis_kelamin,
-				'agama' => $agama,
-				'pendidikan' => $pendidikan,
-				'status_nikah' => $status_nikah,
-				'alamat' => $alamat,
-				'kelurahan' => $kelurahan,
-				'kecamatan' => $kecamatan,
-				'kota' => $kota,
-				'provinsi' => $provinsi,
-				'tempat_lahir' => $tempat_lahir,
-				'tanggal_lahir' => $tanggal_lahir,
-				'username' => $username,
-				'status_pegawai' => $status_pegawai,
-				'jenis_pegawai' => $jenis_pegawai,
-				'satuan_kerja' => $satuan_kerja,
-				'jabatan' => $jabatan,
-				'gol_ruang' => $gol_ruang,
-				'satuan_org' => $satuan_org,
-				'kgb_pegawai' => $kgb_pegawai,
-				'pangkat' => $pangkat,
-				'karpeg' => $karpeg,
-				'karis' => $karis,
-				'kpe' => $kpe,
-				'taspen' => $taspen,
-				'npwp' => $npwp,
-				'nidn' => $nidn,
-				'jurusan' => $jurusan,
-				'telp' => $telp
-			);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-			</button>
-			Data pegawai berhasil diubah.</div>');
-			// $this->pegawai_model->editDataPegawai($DataUpdate, $id_pegawai);
-			$this->Pegawai_model->update_data('pegawai', $DataUpdate, $id);
-			redirect('admin/pegawai');
-		} else {
-			$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            Maaf. Data pegawai gagal diubah karena kesalahan pengisian form. Silakan cek kembali.</div>');
-			redirect('admin/pegawai/index');
 		}
 	}
 

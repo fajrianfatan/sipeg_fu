@@ -68,7 +68,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pegawai <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="jenis_pegawai" required="required" class="form-control " placeholder="PNS atau lainnya..">
+												<input type="text" name="jenis_pegawai"
+												maxlength="32"  required="required" class="form-control " placeholder="PNS atau lainnya..">
 											</div>
 										</div>
 										

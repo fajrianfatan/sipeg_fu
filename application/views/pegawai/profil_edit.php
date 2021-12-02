@@ -70,19 +70,22 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">NIP
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nip" class="form-control " value="<?php echo $pegawai->nip ?>">
+												<input type="text" name="nip" class="form-control " 
+												maxlength="18" value="<?php echo $pegawai->nip ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Nama Pegawai</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="nama_pegawai" class="form-control" type="text" value="<?php echo $pegawai->nama_pegawai ?>">
+												<input name="nama_pegawai" class="form-control" type="text" 
+												maxlength="60" value="<?php echo $pegawai->nama_pegawai ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Gelar Pegawai</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="gelar_pegawai" class="form-control" type="text" value="<?php echo $pegawai->gelar_pegawai ?>">
+												<input name="gelar_pegawai" class="form-control" 
+												maxlength="32" type="text" value="<?php echo $pegawai->gelar_pegawai ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -157,7 +160,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Alamat</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="alamat" class="form-control" type="text" value="<?php echo $pegawai->alamat ?>">
+												<input name="alamat" class="form-control" 
+												maxlength="60" type="text" value="<?php echo $pegawai->alamat ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -187,7 +191,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat Lahir</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="tempat_lahir" class="form-control" type="text" value="<?php echo $pegawai->tempat_lahir ?>">
+												<input name="tempat_lahir" class="form-control" 
+												maxlength="60" type="text" value="<?php echo $pegawai->tempat_lahir ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -224,7 +229,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Satuan Kerja</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="satuan_kerja" class="form-control" type="text" value="<?php echo $pegawai->satuan_kerja ?>">
+												<input name="satuan_kerja" class="form-control" type="text" 
+												maxlength="32" value="<?php echo $pegawai->satuan_kerja ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -252,13 +258,15 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Satuan Organisasi</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="satuan_org" class="form-control" type="text" value="<?php echo $pegawai->satuan_org ?>">
+												<input name="satuan_org" class="form-control" 
+												maxlength="32" type="text" value="<?php echo $pegawai->satuan_org ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">KGB Pegawai</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="kgb_pegawai" class="form-control" type="text" value="<?php echo $pegawai->kgb_pegawai ?>">
+												<input name="kgb_pegawai" class="form-control" 
+												maxlength="18" type="text" value="<?php echo $pegawai->kgb_pegawai ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -275,37 +283,43 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karpeg</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="karpeg" class="form-control" type="text" value="<?php echo $pegawai->karpeg ?>">
+												<input name="karpeg" class="form-control" type="text"
+												maxlength="18" value="<?php echo $pegawai->karpeg ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Karis</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="karis" class="form-control" type="text" value="<?php echo $pegawai->karis ?>">
+												<input name="karis" class="form-control" type="text" 
+												maxlength="16" value="<?php echo $pegawai->karis ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">KPE</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="kpe" class="form-control" type="text" value="<?php echo $pegawai->kpe ?>">
+												<input name="kpe" class="form-control" 
+												maxlength="18" type="text" value="<?php echo $pegawai->kpe ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Taspen</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="taspen" class="form-control" type="text" value="<?php echo $pegawai->taspen ?>">
+												<input name="taspen" class="form-control" 
+												maxlength="15" type="text" value="<?php echo $pegawai->taspen ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NPWP</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="npwp" class="form-control" type="text" value="<?php echo $pegawai->npwp ?>">
+												<input name="npwp" class="form-control" 
+												maxlength="15" type="text" value="<?php echo $pegawai->npwp ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">NIDN</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="nidn" class="form-control" type="text" value="<?php echo $pegawai->nidn ?>">
+												<input name="nidn" class="form-control" 
+												maxlength="18" type="text" value="<?php echo $pegawai->nidn ?>">
 											</div>
 										</div>
 										<div class="item form-group">
@@ -322,7 +336,8 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Nomor Telepon/HP</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="telp" class="form-control" type="text" value="<?php echo $pegawai->telp ?>">
+												<input name="telp" class="form-control" type="text" 
+												maxlength="15" value="<?php echo $pegawai->telp ?>">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

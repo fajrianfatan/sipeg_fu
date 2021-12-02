@@ -69,14 +69,16 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Kode Jurusan
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="kode_jurusan" class="form-control " value="<?php echo $jurusan->kode_jurusan ?>">
+												<input type="text" name="kode_jurusan" class="form-control " 
+												maxlength="16" value="<?php echo $jurusan->kode_jurusan ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Jurusan
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="jurusan" class="form-control " value="<?php echo $jurusan->jurusan ?>">
+												<input type="text" name="jurusan" class="form-control " 
+												maxlength="32" value="<?php echo $jurusan->jurusan ?>">
 											</div>
 										</div>
                                         

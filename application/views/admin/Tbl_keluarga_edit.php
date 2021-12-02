@@ -69,7 +69,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Keterikatan Keluarga 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="keluarga" class="form-control " value="<?php echo $tbl_keluarga->keluarga ?>">
+												<input type="text" name="keluarga" class="form-control " 
+												maxlength="32" value="<?php echo $tbl_keluarga->keluarga ?>">
 											</div>
 										</div>
                                         

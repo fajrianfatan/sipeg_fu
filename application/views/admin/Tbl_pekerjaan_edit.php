@@ -69,7 +69,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pekerjaan 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="pekerjaan" class="form-control " value="<?php echo $tbl_pekerjaan->pekerjaan ?>">
+												<input type="text" name="pekerjaan" class="form-control " 
+												maxlength="32" value="<?php echo $tbl_pekerjaan->pekerjaan ?>">
 											</div>
 										</div>
                                         

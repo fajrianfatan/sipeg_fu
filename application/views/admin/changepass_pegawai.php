@@ -81,7 +81,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Password Baru<span class="required"> *</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="password" name="passBaru" class="form-control" required="required">
+												<input type="password" name="passBaru" id="passBaru" class="form-control" required="required"
+												maxlength = "16">
 												<?php echo form_error('passBaru','<div class="text-danger pl-3">', '</div>') ?>
 											</div>
 										</div>
@@ -89,7 +90,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Konfirmasi Password Baru<span class="required"> *</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="password" name="ulangPass" class="form-control " required="required">
+												<input type="password" name="ulangPass" id="ulangPass" class="form-control " required="required"
+												maxlength = "16">
 												<?php echo form_error('ulangPass','<div class="text-danger pl-3">', '</div>') ?>
 											</div>
 										</div>

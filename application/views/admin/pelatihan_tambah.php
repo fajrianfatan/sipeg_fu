@@ -81,55 +81,64 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Pelatihan/Kursus <span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_latihan" required="required" class="form-control" >
+												<input type="text" name="nama_latihan" required="required" 
+												maxlength="60" class="form-control" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Periode<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="periode" class="form-control" type="text" >
+												<input required="required" name="periode" class="form-control" 
+												maxlength="32" type="text" >
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Jam lamanya pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="jam" class="form-control" type="text">
+												<input required="required" name="jam" class="form-control" 
+												maxlength="16" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Hari lamanya pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="hari" class="form-control" type="text">
+												<input required="required" name="hari" class="form-control"
+												maxlength="16" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Bulan lamanya pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="bulan" class="form-control" type="text">
+												<input required="required" name="bulan"
+												maxlength="16" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun pelaksanaan pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tahun" class="form-control" type="text">
+												<input required="required" name="tahun" 
+												maxlength="4" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="tempat" class="form-control" type="text">
+												<input required="required" name="tempat" 
+												maxlength="60" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Sumber dana pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="sumber_dana" class="form-control" type="text">
+												<input required="required" name="sumber_dana" 
+												maxlength="32" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Penyelenggara pelatihan/kursus<span class="required">*</span></label>
 											<div class="col-md-6 col-sm-6 ">
-												<input required="required" name="penyelenggara" class="form-control" type="text">
+												<input required="required" name="penyelenggara" 
+												maxlength="60" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="ln_solid"></div>

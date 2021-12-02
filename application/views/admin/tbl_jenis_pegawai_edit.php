@@ -69,7 +69,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Pegawai
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="jenis_pegawai" class="form-control " value="<?php echo $tbl_jenis_pegawai->jenis_pegawai ?>">
+												<input type="text" name="jenis_pegawai" 
+												maxlength="32" class="form-control " value="<?php echo $tbl_jenis_pegawai->jenis_pegawai ?>">
 											</div>
 										</div>
                                         

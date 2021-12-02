@@ -115,7 +115,8 @@
 											<label class="col-form-label col-md-3 col-sm-3 label-align">No SK Kepangkatan 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="no_sk_pangkat" class="form-control" value="<?php echo $kepangkatan->no_sk_pangkat ?>">
+												<input type="text" name="no_sk_pangkat" class="form-control" 
+												maxlength="32" value="<?php echo $kepangkatan->no_sk_pangkat ?>">
 											</div>
 										</div>
 										
@@ -152,13 +153,15 @@
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Gaji Pokok Kepangkatan</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="gaji_pokok_pangkat" class="form-control" type="text" value="<?php echo $kepangkatan->gaji_pokok_pangkat ?>">
+												<input name="gaji_pokok_pangkat" class="form-control"
+												maxlength="32" type="text" value="<?php echo $kepangkatan->gaji_pokok_pangkat ?>">
 											</div>
 										</div>
 										<div class="item form-group">
 											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">PAK</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="pak" class="form-control" type="text" value="<?php echo $kepangkatan->pak ?>" >
+												<input name="pak" class="form-control" type="text" 
+												maxlength="32" value="<?php echo $kepangkatan->pak ?>" >
 											</div>
 										</div>
                                         <div class="item form-group">
