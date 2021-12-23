@@ -58,7 +58,7 @@
 								<div class="x_content">
 								<p class="text-muted font-13 m-b-30">
 								Fitur ini bertujuan untuk mengubah password akun anda.
-								Masukkan password baru dan konfirmasi password baru. Gunakan kombinasi karakter dan angka untuk keamanan akun yang lebih baik.
+								Masukkan password baru dan konfirmasi password baru 8-16 karakter. Gunakan kombinasi karakter dan angka untuk keamanan akun yang lebih baik.
 								</p>
 									<br />
 									<form method="post" action="<?php echo base_url('pegawai/changepass/gantiPassAksi')?>">

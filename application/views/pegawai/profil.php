@@ -49,7 +49,7 @@
                       <div class="profile_img">
                         <div id="crop-avatar">
                           <!-- Current avatar -->
-                          <img width="240px"class="img-responsive avatar-view" src="<?php echo base_url('assets/directory/foto pegawai/'.$foto)?>" alt="Avatar" title="Change the avatar">
+                          <img width="100px"class="img-responsive avatar-view" src="<?php echo base_url('assets/directory/foto pegawai/'.$foto)?>" alt="Avatar" title="Change the avatar">
                         </div>
                       </div>
                       <br>
@@ -151,12 +151,14 @@
                           <td>NIDN</td>
                           <td><?php echo ucfirst($nidn);?></td>
                         </tr>
+                        <?php foreach ($pegawai as $peg) : ?>
                         <tr>
                           <th scope="row">9</th>
                           <td>Alamat Lengkap</td>
-                          <td><?php echo ucfirst($alamat);?> <?php echo ucfirst($kelurahan);?> 
-                          <?php echo ucfirst($kecamatan);?> <?php echo ucfirst($kota);?> <?php echo ucfirst($provinsi);?></td>
+                          <td><?php echo ucfirst($peg->alamat);?>, <?php echo ucfirst($peg->kelurahan);?> Kec.
+                          <?php echo ucfirst($peg->kecamatan);?>, <?php echo ucfirst($peg->kota);?>, Provinsi <?php echo ucfirst($peg->provinsi);?></td>
                         </tr>
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
 

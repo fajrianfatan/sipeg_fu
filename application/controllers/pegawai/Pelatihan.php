@@ -35,93 +35,127 @@ class Pelatihan extends CI_Controller {
 			'username' => $dataInput->username,
 			'foto_pegawai' => $dataInput->foto_pegawai,
 			'level' => 'pegawai',
-			'judul' => 'Tambah Data Penghargaan atau Tanda Jasa',
-            'judul2' => 'Riwayat Pekerjaan dan Penghargaan',
-            'judul3' => 'Tambah Data Penghargaan atau Tanda Jasa',
-			'id_penghargaan' => set_value('id_penghargaan'),
+			'id_pelatihan' => set_value('id_pelatihan'),
 			'id_pegawai' => set_value('id_pegawai'),
-			'nama_penghargaan' => set_value('nama_penghargaan'),
-			'tahun_penghargaan' => set_value('tahun_penghargaan'),
-			'pemberi_penghargaan' => set_value('pemberi_penghargaan')
+			'nama_latihan' => set_value('nama_latihan'),
+			'periode' => set_value('periode'),
+			'jam' => set_value('jam'),
+            'hari' => set_value('hari'),
+            'bulan' => set_value('bulan'),
+            'tahun' => set_value('tahun'),
+            'tempat' => set_value('tempat'),
+            'sumber_dana' => set_value('sumber_dana'),
+            'penyelenggara' => set_value('penyelenggara'),
+			'judul' => 'Tambah Data Pelatihan Pegawai',
+            'judul2' => 'Riwayat Pendidikan dan Pelatihan Pegawai',
+            'judul3' => 'Tambah Data Pelatihan Pegawai'
 		);
-		$this->load->view('pegawai/penghargaan_tambah',$dataInput);
+		$this->load->view('pegawai/pelatihan_tambah',$dataInput);
 	}
 
 	public function input_aksi()
 	{	
-		$id_penghargaan = $this->input->post('id_penghargaan');
+		$id_pelatihan = $this->input->post('id_pelatihan');
 		$id_pegawai = $this->input->post('id_pegawai');
-		$nama_penghargaan = $this->input->post('nama_penghargaan');
-		$tahun_penghargaan = $this->input->post('tahun_penghargaan');
-		$pemberi_penghargaan = $this->input->post('pemberi_penghargaan');
+		$nama_latihan = $this->input->post('nama_latihan');
+		$periode = $this->input->post('periode');
+		$jam = $this->input->post('jam');
+        $hari = $this->input->post('hari');
+        $bulan = $this->input->post('bulan');
+        $tahun = $this->input->post('tahun');
+        $tempat = $this->input->post('tempat');
+        $sumber_dana = $this->input->post('sumber_dana');
+        $penyelenggara = $this->input->post('penyelenggara');
 		
 		$DataInsert = array(
-			'id_penghargaan' => $id_penghargaan,
+			'id_pelatihan' => $id_pelatihan,
 			'id_pegawai' => $id_pegawai,
-			'nama_penghargaan' => $nama_penghargaan,
-			'tahun_penghargaan' => $tahun_penghargaan,
-			'pemberi_penghargaan' => $pemberi_penghargaan,
+			'nama_latihan' => $nama_latihan,
+			'periode' => $periode,
+			'jam' => $jam,
+            'hari' => $hari,
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+            'tempat' => $tempat,
+            'sumber_dana' => $sumber_dana,
+            'penyelenggara' => $penyelenggara
 		);
-		$this->Penghargaan_model->input_data($DataInsert);
+		// echo "<pre>";
+		// print_r($DataInsert);
+		// echo "<pre>";
+		$this->Pelatihan_model->input_data($DataInsert);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 		</button>
-		Data penghargaan atau tanda jasa pegawai berhasil ditambahkan.</div>');
-		redirect('pegawai/penghargaan');
+		Data pelatihan pegawai berhasil ditambahkan.</div>');
+		redirect(base_url('pegawai/pelatihan'));
 	}
 
 	public function edit($id)
 	{
-		$recordPenghargaan = $this->Penghargaan_model->getDataPenghargaanDetail($id);
+		$recordPelatihan = $this->Pelatihan_model->getDataPelatihanDetail($id);
 		//echo "<pre>";
 		//print_r($recordUser);
 		//echo "<pre>";
 		$data = $this->Pegawai_model->ambil_data($this->session->userdata['username']);
 		$data = array(
 			'pegawai' => $this->Pegawai_model->tampil_data_aspeg()->result(),
-			'penghargaan' => $recordPenghargaan,
+			'pelatihan' => $recordPelatihan,
 			'username' => $data->username,
-			'foto_pegawai' => $data->foto_pegawai,
 			'level' => 'pegawai',
-			'judul' => 'Ubah Data Penghargaan atau Tanda Jasa',
-            'judul2' => 'Riwayat Pekerjaan dan Penghargaan',
-            'judul3' => 'Ubah Data Penghargaan atau Tanda Jasa',
+			'foto_pegawai' => $data->foto_pegawai,
+			'judul' => 'Ubah Data Pelatihan Pegawai',
+            'judul2' => 'Riwayat Pendidikan dan Pelatihan Pegawai',
+            'judul3' => 'Ubah Data Pelatihan Pegawai'
 		);
-		$this->load->view('pegawai/penghargaan_edit',$data);
+		
+		$this->load->view('pegawai/pelatihan_edit',$data);
 	}
 
 	public function AksiEdit()
 	{
-		$id_penghargaan = $this->input->post('id_penghargaan');
+		$id_pelatihan = $this->input->post('id_pelatihan');
 		$id_pegawai = $this->input->post('id_pegawai');
-		$nama_penghargaan = $this->input->post('nama_penghargaan');
-		$tahun_penghargaan = $this->input->post('tahun_penghargaan');
-		$pemberi_penghargaan = $this->input->post('pemberi_penghargaan');
+		$nama_latihan = $this->input->post('nama_latihan');
+		$periode = $this->input->post('periode');
+		$jam = $this->input->post('jam');
+		$hari = $this->input->post('hari');
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$tempat = $this->input->post('tempat');
+		$sumber_dana = $this->input->post('sumber_dana');
+		$penyelenggara = $this->input->post('penyelenggara');
 
 		$DataUpdate = array(
 			'id_pegawai'=> $id_pegawai,
-			'nama_penghargaan'=> $nama_penghargaan,
-			'tahun_penghargaan'=> $tahun_penghargaan,
-			'pemberi_penghargaan'=> $pemberi_penghargaan,
+			'nama_latihan'=> $nama_latihan,
+			'periode'=> $periode,
+			'jam'=> $jam,
+			'hari'=> $hari,
+			'bulan'=> $bulan,
+			'tahun'=> $tahun,
+			'tempat'=> $tempat,
+			'sumber_dana'=> $sumber_dana,
+			'penyelenggara'=> $penyelenggara,
 		);
 		//echo "<pre>";
 		//print_r($DataUpdate);
 		//echo "<pre>";
-		$this->Penghargaan_model->editDataPenghargaan($DataUpdate, $id_penghargaan);
+		$this->Pelatihan_model->editDataPelatihan($DataUpdate, $id_pelatihan);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 		</button>
-		Data penghargaan atau tanda jasa pegawai berhasil diubah.</div>');
-		redirect('pegawai/penghargaan');
+		Data pelatihan pegawai berhasil diubah.</div>');
+		redirect('pegawai/pelatihan');
 	}
 
-	public function deletePenghargaan($id_penghargaan)
+	public function deletePelatihan($id_pelatihan)
 	{
-		$this->Penghargaan_model->deleteDataPenghargaan($id_penghargaan);
+		$this->Pelatihan_model->deleteDataPelatihan($id_pelatihan);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible " role="alert">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
 		</button>
-		Data penghargaan atau tanda jasa pegawai berhasil dihapus.</div>');
-		redirect('pegawai/penghargaan');
+		Data pelatihan atau tanda jasa pegawai berhasil dihapus.</div>');
+		redirect('pegawai/pelatihan');
 	}
 }

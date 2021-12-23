@@ -12,13 +12,54 @@ class Profil extends CI_Controller {
 		}
 	}
 
+	public function getDataKabupaten()
+	{
+		$idprov = $this->input->post('id');
+		$data = $this->Dynamic_model->getDataKabupaten($idprov);
+		$output = '<option value="">-- Pilih Kabupaten/Kota --</option>';
+		foreach ($data as $row) {
+			$output .= '<option value="' . $row->id . '"> ' . $row->nama . '</option>';
+		}
+		$this->output->set_content_type('application/json')->set_output(json_encode($output));
+	}
+
+	public function getDataKecamatan()
+	{
+		$idkab = $this->input->post('id');
+		$data = $this->Dynamic_model->getDataKecamatan($idkab);
+		$output = '<option value="">-- Pilih Kecamatan --</option>';
+		foreach ($data as $row) {
+			$output .= '<option value="' . $row->id . '"> ' . $row->nama . '</option>';
+		}
+		$this->output->set_content_type('application/json')->set_output(json_encode($output));
+	}
+
+	public function getDataDesa()
+	{
+		$idkec = $this->input->post('id');
+		$data = $this->Dynamic_model->getDataDesa($idkec);
+		$output = '<option value="">-- Pilih Kelurahan/Desa --</option>';
+		foreach ($data as $row) {
+			$output .= '<option value="' . $row->id . '"> ' . $row->nama . '</option>';
+		}
+		$this->output->set_content_type('application/json')->set_output(json_encode($output));
+	}
 	public function index()
 	{
 
 		$data = $this->Pegawai_model->ambil_data($this->session->userdata['username']);
 
 		$data = array(
-            'kepangkatan' => $this->Pegawai_model->tampil_data_aspeg()->result(),
+            'pegawai' => $this->Pegawai_model->tampil_data()->result(),
+			'tbl_gol_ruang' => $this->Tbl_golruang_model->tampil_data('tbl_gol_ruang')->result(),
+			'tbl_jabatan' => $this->Tbl_jabatan_model->tampil_data('tbl_jabatan')->result(),
+			'tbl_pendidikan' => $this->Tbl_pendidikan_model->tampil_data('tbl_pendidikan')->result(),
+			'tbl_pangkat' => $this->Tbl_pangkat_model->tampil_data('tbl_pangkat')->result(),
+			'tbl_jenis_pegawai' => $this->Tbl_jenis_pegawai_model->tampil_data('tbl_jenis_pegawai')->result(),
+			'tbl_jurusan' => $this->Tbl_jurusan_model->tampil_data('jurusan')->result(),
+			'tbl_jenis_kelamin' => $this->Tbl_jenis_kelamin_model->tampil_data('tbl_jenis_kelamin')->result(),
+			'tbl_agama' => $this->Tbl_agama_model->tampil_data('tbl_agama')->result(),
+			'tbl_status_menikah' => $this->Tbl_status_menikah_model->tampil_data('tbl_status_menikah')->result(),
 			'username' => $data->username,
 			'foto_pegawai' => $data->foto_pegawai,
 			'level' => 'pegawai',
@@ -73,7 +114,15 @@ class Profil extends CI_Controller {
 			'tbl_pangkat' => $this->Tbl_pangkat_model->tampil_data('tbl_pangkat')->result(),
 			'tbl_jenis_pegawai' => $this->Tbl_jenis_pegawai_model->tampil_data('tbl_jenis_pegawai')->result(),
 			'tbl_jurusan' => $this->Tbl_jurusan_model->tampil_data('jurusan')->result(),
+			'tbl_jenis_kelamin' => $this->Tbl_jenis_kelamin_model->tampil_data('tbl_jenis_kelamin')->result(),
+			'tbl_agama' => $this->Tbl_agama_model->tampil_data('tbl_agama')->result(),
+			'tbl_status_menikah' => $this->Tbl_status_menikah_model->tampil_data('tbl_status_menikah')->result(),
 			'pegawai' => $recordPegawai,
+			'provinsi' => $data->provinsi,
+			'kota' => $data->kota,
+			'kecamatan' => $data->kecamatan,
+			'kelurahan' => $data->kelurahan,
+			'dataProvinsi' => $this->Dynamic_model->getDataProv(),
 			'username' => $data->username,
 			'foto_pegawai' => $data->foto_pegawai,
 			'level' => 'pegawai',

@@ -128,7 +128,7 @@
                                                     <td><?php echo $peg->alamat ?>,
                                                         <?php echo $peg->kelurahan ?>, Kec.
                                                         <?php echo $peg->kecamatan ?>,
-                                                        <?php echo $peg->kota ?>,
+                                                        <?php echo $peg->kota ?>, Provinsi
                                                         <?php echo $peg->provinsi ?></td>.
                                                     <td>
                                                         <a

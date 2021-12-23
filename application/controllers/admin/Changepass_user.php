@@ -36,26 +36,35 @@ class Changepass_user extends CI_Controller {
         $id_user = $this->input->post('id_user');
         $passBaru = $this->input->post('passBaru');
 		$ulangPass = $this->input->post('ulangPass');
-        if($passBaru == $ulangPass){
+        $this->form_validation->set_rules('passBaru', 'Password', 'required|min_length[8]|max_length[16]|trim|xss_clean|matches[ulangPass]'
+			,array(
+				'required'      => '%s wajib diisi.',
+				'min_length'      => '%s harus terdiri dari minimal 8 karakter.',
+				'max_length'      => '%s harus terdiri dari maksimal 16 karakter.',
+				'matches'     => '%s harus sama dengan konfirmasi password.'
+		));
+		$this->form_validation->set_rules('ulangPass', 'Konfirmasi password', 'required|min_length[8]|max_length[16]|trim|xss_clean|matches[passBaru]'
+			,array(
+				'required'      => '%s wajib diisi.',
+				'min_length'      => '%s harus terdiri dari minimal 8 karakter.',
+				'max_length'      => '%s harus terdiri dari maksimal 16 karakter.',
+				'matches'     => '%s harus sama dengan password baru.'
+		));
+		$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+			</button>
+			Gagal. Terdapat kesalahan saat mengganti password.</div>');
+		if ($this->form_validation->run() == FALSE)
+		{
+			
+			$this->index();
+			return;
+        }else{
             $id = array('id_user'=>$id_user);
             $data = $data = array('password' => md5($passBaru));
             $this->User_model->update_data('user',$data,$id);
             
             redirect('auth/changed');
-        }elseif($passBaru != $ulangPass){
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            Maaf. Password gagal diubah karena isi password baru dan konfirmasi password baru tidak cocok!.</div>');
-            //die;
-            $this->index();
-        }else{
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible " role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-            </button>
-            Maaf. Password gagal diubah!.</div>');
-            $this->index();
-            //die;
         }
         //}
     }

@@ -8,8 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title><?php echo $judul;?></title>
-	<!-- Select2 -->
-	<link href="<?php echo base_url();?>assets/js/select2/dist/css/select2.min.css" rel="stylesheet" />
+
 	<!-- Bootstrap -->
 	<link href="<?php echo base_url();?>assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -17,8 +16,7 @@
 	<!-- iCheck -->
 	<link href="<?php echo base_url();?>assets/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 	<!-- bootstrap-wysiwyg -->
-	<link href="<?php echo base_url();?>assets/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
-	<!-- Custom Theme Style -->
+	<link href="<?php echo base_url();?>assets/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"><!-- Custom Theme Style -->
 	<link href="<?php echo base_url();?>assets/build/css/custom.min.css" rel="stylesheet">
 </head>
 
@@ -58,12 +56,13 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form method="post" action="<?php echo base_url('pegawai/keluarga/AksiEdit')?>">
-                                        <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">ID KELUARGA
+                                    
+									<form method="post" action="<?php echo base_url('pegawai/pelatihan/AksiEdit')?>">
+									<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align">ID PELATIHAN
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="id_keluarga" class="form-control " value="<?php echo $keluarga->id_keluarga ?>" readonly>
+												<input type="text" name="id_pelatihan" class="form-control " value="<?php echo $pelatihan->id_pelatihan?>" readonly>
 											</div>
 										</div>
 										<div class="item form-group">
@@ -72,7 +71,7 @@
 												<select class="form-control" name="id_pegawai" type="text">
 													<?php 
 													foreach ($pegawai as $peg) : 
-													if($peg->id_pegawai == $keluarga->id_pegawai){?>
+													if($peg->id_pegawai == $pelatihan->id_pegawai){?>
 													<option value="<?php echo $peg->id_pegawai ?>" label="<?php echo $peg->nama_pegawai; ?>">the hidden text</option>
 													<?php } ?>
 													<?php endforeach; ?>
@@ -80,76 +79,79 @@
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Anggota Keluarga
+											<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Pelatihan/Kursus 
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input type="text" name="nama_anggota" class="form-control" 
-												maxlength="60" value="<?php echo $keluarga->nama_anggota ?>">
-											</div>
-										</div>
-                                        <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">Jenis Kelamin <span class="required"> *</span></label>
-											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" name="jk" required="required" type="text">
-													<option value="">-- Pilih Jenis Kelamin --</option>
-													<?php foreach($tbl_jenis_kelamin as $jk) : ?>
-													<option value="<?php echo $jk->jenis_kelamin ?>" <?= $jk->jenis_kelamin == $keluarga->jk ? "selected" : null ?>><?php echo $jk->jenis_kelamin; ?></option>
-													<?php endforeach; ?>
-												</select>
+												<input type="text" name="nama_latihan" 
+												maxlength="60" value="<?php echo $pelatihan->nama_latihan?>" class="form-control" >
 											</div>
 										</div>
 										<div class="item form-group">
-											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat Lahir</label>
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Periode</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input name="tempat_lahir_anggota" class="form-control" 
-												maxlength="60" type="text" value="<?php echo $keluarga->tempat_lahir_anggota ?>">
-											</div>
-										</div>
-                                        <div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal Lahir
-											</label>
-											<div class="col-md-6 col-sm-6 ">
-												<input id="birthday" name="tgl_lahir_anggota" class="date-picker form-control" value="<?php echo $keluarga->tgl_lahir_anggota ?>" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-												<script>
-													function timeFunctionLong(input) {
-														setTimeout(function() {
-															input.type = 'text';
-														}, 60000);
-													}
-												</script>
+												<input value="<?php echo $pelatihan->periode?>" name="periode" 
+												maxlength="32" class="form-control" type="text" >
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align">Ikatan Keluarga <span class="required"> *</span></label>
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Jam lamanya pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" name="sebagai" required="required" type="text">
-													<option value="">-- Pilih Ikatan Keluarga --</option>
-													<?php foreach($tbl_keluarga as $kel) : ?>
-													<option value="<?php echo $kel->keluarga ?>" <?= $kel->keluarga == $keluarga->sebagai ? "selected" : null ?>><?php echo $kel->keluarga; ?></option>
-													<?php endforeach; ?>
-												</select>
+												<input value="<?php echo $pelatihan->jam?>" name="jam" 
+												maxlength="16" class="form-control" type="text">
 											</div>
 										</div>
                                         <div class="item form-group">
-											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan<span class="required">*</span></label>
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Hari lamanya pelatihan/kursus</label>
 											<div class="col-md-6 col-sm-6 ">
-												<select class="form-control" name="pekerjaan" required="required" type="text">
-													<option value="">-- Pilih Jenis Pekerjaan --</option>
-													<?php foreach($tbl_pekerjaan as $kerja) : ?>
-													<option value="<?php echo $kerja->pekerjaan ?>" <?= $kerja->pekerjaan == $keluarga->pekerjaan ? "selected" : null ?>><?php echo $kerja->pekerjaan; ?></option>
-													<?php endforeach; ?>
-												</select>
+												<input value="<?php echo $pelatihan->hari?>" name="hari" 
+												maxlength="16" class="form-control" type="text">
+											</div>
+										</div>
+                                        <div class="item form-group">
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Bulan lamanya pelatihan/kursus</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input value="<?php echo $pelatihan->bulan?>" name="bulan" 
+												maxlength="16" class="form-control" type="text">
+											</div>
+										</div>
+                                        <div class="item form-group">
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tahun pelaksanaan pelatihan/kursus</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input value="<?php echo $pelatihan->tahun?>" 
+												maxlength="4" name="tahun" class="form-control" type="text">
+											</div>
+										</div>
+                                        <div class="item form-group">
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Tempat pelatihan/kursus</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input value="<?php echo $pelatihan->tempat?>" 
+												maxlength="60" name="tempat" class="form-control" type="text">
+											</div>
+										</div>
+                                        <div class="item form-group">
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Sumber dana pelatihan/kursus</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input value="<?php echo $pelatihan->sumber_dana?>" name="sumber_dana" 
+												maxlength="32" class="form-control" type="text">
+											</div>
+										</div>
+                                        <div class="item form-group">
+											<label for="email" class="col-form-label col-md-3 col-sm-3 label-align">Penyelenggara pelatihan/kursus</label>
+											<div class="col-md-6 col-sm-6 ">
+												<input value="<?php echo $pelatihan->penyelenggara?>" name="penyelenggara" 
+												maxlength="60" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
-												<a href="<?php echo base_url('pegawai/keluarga')?>"><button class="btn btn-primary" type="button">Cancel</button></a>
+												<a href="<?php echo base_url('pegawai/pelatihan')?>"><button class="btn btn-primary" type="button">Cancel</button></a>
 												<button class="btn btn-primary" type="reset">Reset</button>
 												<button type="submit" class="btn btn-success">Submit</button>
 											</div>
 										</div>
 									</form>
+                                    
 								</div>
 							</div>
 						</div>
@@ -182,6 +184,10 @@
 	<script src="<?php echo base_url();?>assets/vendors/fastclick/lib/fastclick.js"></script>
 	<!-- iCheck -->
 	<script src="<?php echo base_url();?>assets/vendors/iCheck/icheck.min.js"></script>
+	<!-- bootstrap-wysiwyg -->
+	<script src="<?php echo base_url();?>assets/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+	<script src="<?php echo base_url();?>assets/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+	<script src="<?php echo base_url();?>assets/vendors/google-code-prettify/src/prettify.js"></script>
 	<!-- jQuery Tags Input -->
 	<script src="<?php echo base_url();?>assets/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
 	<!-- Autosize -->
@@ -190,24 +196,5 @@
 	<script src="<?php echo base_url();?>assets/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="<?php echo base_url();?>assets/build/js/custom.min.js"></script>
-	<!-- Select2 Scripts -->
-	<script src="<?php echo base_url();?>assets/js/select2/dist/js/select2.min.js"></script>
-	<script type="text/javascript">
-	// In your Javascript (external .js resource or <script> tag)
-	function formatSearch(item) {
-        var selectionText = item.text.split("|");
-        var $returnString = $('<span>' + selectionText[0] + '</br><b>' + selectionText[1] + '</b></br>' + selectionText[2] +'</span>');
-        return $returnString;
-    };
-    function formatSelected(item) {
-        var selectionText = item.text.split("|");
-        var $returnString = $('<span>' + selectionText[0].substring(0, 21) +'</span>');
-        return $returnString;
-    };
-    $('.js-example-basic-single').select2({
-        templateResult: formatSearch,
-        templateSelection: formatSelected
-    });
-	</script>
 
 </body></html>
